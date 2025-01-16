@@ -1,0 +1,19 @@
+<APIProxy revision="5" name="ExtJokesAPI">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1737037892499</CreatedAt>
+    <LastModifiedAt>1737037912652</LastModifiedAt>
+    <BasePaths>/ext-jokes</BasePaths>
+    <Policies>
+        <Policy>AM-SetResponse</Policy>
+        <Policy>EC-ExtCallout</Policy>
+        <Policy>SC-ServiceCallout</Policy>
+        <Policy>JS-JSCallout</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://get-joke.js</Resource>
+    </Resources>
+</APIProxy>

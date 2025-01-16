@@ -1,0 +1,1 @@
+context.setVariable("jslocaljoke", "You want to hear a JavaScript joke? I'll callback later !");

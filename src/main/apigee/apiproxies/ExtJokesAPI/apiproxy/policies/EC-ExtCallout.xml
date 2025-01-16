@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExternalCallout continueOnError="false" enabled="true" name="EC-ExtCallout">
+  <DisplayName>EC-ExtCallout</DisplayName>
+  <GrpcConnection>
+    <Server name="apigee-extcallout1"/>
+  </GrpcConnection>
+  <TimeoutMs>5000</TimeoutMs>
+  <Configurations>
+    <Property name="with.request.content">true</Property>
+    <Property name="with.request.headers">true</Property>
+    <Property name="with.response.content">true</Property>
+    <Property name="with.response.headers">true</Property>
+  </Configurations>
+</ExternalCallout>
