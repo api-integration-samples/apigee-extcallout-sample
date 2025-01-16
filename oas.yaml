@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: Jokes API
+  description: Gets some jokes
+  version: 1.0.0
+servers:
+  - url: https://dev.34-36-221-53.nip.io
+paths:
+  /ext-jokes:
+    get:
+      description: Get jokes
+      operationId: getJokes
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Jokes'
+                type: array
+          description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad Request
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not Found
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal Server Error
+      tags:
+        - transactions
+components:
+  schemas:
+    Error:
+      description: Error object
+      properties:
+        message:
+          description: The error message
+          type: string
+      type: object
+    Jokes:
+      description: A collection of jokes
+      properties:
+        extJoke:
+          description: A joke returned by an ExternalCallout
+          type: string
+        svcJoke:
+          description: A joke returned by a ServiceCallout
+          type: string
+        jsjoke:
+          description: A joke returned by a JSPolicy
+          type: string
+      type: object
